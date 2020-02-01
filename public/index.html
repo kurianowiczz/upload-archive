@@ -5,22 +5,39 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <form class="fileUpload" method="post" enctype="multipart/form-data">
         <h1>Upload File Here</h1>
-        <input type="file" name="filename" value="" accept=".gz">
-        <input type="text" name="title" placeholder="Title">
-        <textarea name="description" placeholder="Description" ></textarea>
-        <input type="date" name="expire">
+        <input type="file" name="filename" value="" accept=".gz" required />
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" placeholder="Title" required />
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" placeholder="Description"></textarea>
+        <label>Expires in:</label>
+        <input type="date" name="expire" required>
+        <input type="time" name="time" min="09:00" max="18:00" required>
         <input type="submit" value="Upload"/>
     </form>
 </body>
 </html>
 
 <style>
-    body{
-        background-color: aqua;
-    }
+* {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+body {
+    background: linear-gradient(90deg, #555, #bdbdbd);
+}
+.fileUpload {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+    width: 400px;
+    margin: auto;
+
+}
 </style>
